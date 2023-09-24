@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+     <title>Water Wave Filling Animation</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="indicator">
+        <output name="result" for="completion">50</output>
+    </div>
+    <input id="completion" type="range" min="0" max="100">
+
+    <!--JavaScript-->
+    <script>
+        const input = document.querySelector("input");
+        const indicator = document.querySelector(".indicator");
+        const output = document.querySelector("output");
+        input.addEventListener("input", (e) => {
+            setValue(e.target.value);
+        });
+        function setValue(val) {
+            output.value = val;
+            indicator.setAttribute(
+                "style",`--completion: ${val}%`
+            );
+        }
+    </script>
+</body>
+</html>
